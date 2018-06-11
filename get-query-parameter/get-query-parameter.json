@@ -1,0 +1,29 @@
+[
+    {
+        "id": "f66cb601.47fa18",
+        "type": "change",
+        "z": "b79b4208.d35c68",
+        "name": "set query parameter",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.name",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 60,
+        "wires": [
+            [
+                "4f30c2dd.5432ec"
+            ]
+        ]
+    }
+]
