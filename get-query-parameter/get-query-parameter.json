@@ -1,5 +1,33 @@
 [
     {
+        "id": "532bb87.6014848",
+        "type": "http in",
+        "z": "b79b4208.d35c68",
+        "name": "request",
+        "url": "/hoge",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 60,
+        "wires": [
+            [
+                "f66cb601.47fa18"
+            ]
+        ]
+    },
+    {
+        "id": "4f30c2dd.5432ec",
+        "type": "http response",
+        "z": "b79b4208.d35c68",
+        "name": "response",
+        "statusCode": "",
+        "headers": {},
+        "x": 570,
+        "y": 60,
+        "wires": []
+    },
+    {
         "id": "f66cb601.47fa18",
         "type": "change",
         "z": "b79b4208.d35c68",
