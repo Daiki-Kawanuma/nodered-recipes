@@ -1,5 +1,5 @@
-# クエリパラメータ取得（単一）
+# HTML表示
 
-![flow](https://github.com/Daiki-Kawanuma/nodered-recipes/blob/master/get-query-parameter/image.png)
+![flow](https://github.com/Daiki-Kawanuma/nodered-recipes/blob/master/show-html/image.png)
 
-単一のクエリパラメータを取得するレシピ
+HTML を表示するレシピ
