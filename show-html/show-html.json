@@ -1,0 +1,49 @@
+[
+    {
+        "id": "532bb87.6014848",
+        "type": "http in",
+        "z": "b79b4208.d35c68",
+        "name": "request",
+        "url": "/hoge",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 60,
+        "wires": [
+            [
+                "c8243612.e7eff8"
+            ]
+        ]
+    },
+    {
+        "id": "4f30c2dd.5432ec",
+        "type": "http response",
+        "z": "b79b4208.d35c68",
+        "name": "response",
+        "statusCode": "",
+        "headers": {},
+        "x": 570,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "c8243612.e7eff8",
+        "type": "template",
+        "z": "b79b4208.d35c68",
+        "name": "HTML",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<h1>Hello, Node-RED</h1>",
+        "output": "str",
+        "x": 330,
+        "y": 60,
+        "wires": [
+            [
+                "4f30c2dd.5432ec"
+            ]
+        ]
+    }
+]
