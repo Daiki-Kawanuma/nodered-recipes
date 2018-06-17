@@ -1,0 +1,48 @@
+[
+    {
+        "id": "3206f14.439410e",
+        "type": "template",
+        "z": "b79b4208.d35c68",
+        "name": "画像アップロード",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<html>\n<head><title>Image upload</title></head>\n<body>\n<h1>Image upload</h1>\n<h2>Select an image file</h2>\n<form  action=\"/image\" method=\"post\" enctype=\"multipart/form-data\">\n    <input type=\"file\" name=\"imagedata\" accept=\"image/*\"  />\n    <input type=\"submit\" value=\"Upload\"/>\n</form>\n</body>\n</html>",
+        "x": 350,
+        "y": 140,
+        "wires": [
+            [
+                "c0d089e5.0e4978"
+            ]
+        ]
+    },
+    {
+        "id": "bf290e7c.8ee0c",
+        "type": "http in",
+        "z": "b79b4208.d35c68",
+        "name": "[GET] /image",
+        "url": "/image",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 140,
+        "wires": [
+            [
+                "3206f14.439410e"
+            ]
+        ]
+    },
+    {
+        "id": "c0d089e5.0e4978",
+        "type": "http response",
+        "z": "b79b4208.d35c68",
+        "name": "response",
+        "statusCode": "",
+        "headers": {},
+        "x": 560,
+        "y": 140,
+        "wires": []
+    }
+]
