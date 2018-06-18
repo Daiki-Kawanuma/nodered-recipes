@@ -1,0 +1,92 @@
+[
+    {
+        "id": "50ffcd34.c99784",
+        "type": "http in",
+        "z": "b79b4208.d35c68",
+        "name": "[POST] /image",
+        "url": "/image",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 240,
+        "wires": [
+            [
+                "7af33004.c9145"
+            ]
+        ]
+    },
+    {
+        "id": "b9a5597a.390cc8",
+        "type": "function",
+        "z": "b79b4208.d35c68",
+        "name": "画像抽出",
+        "func": "if (msg.req.files[0].mimetype.includes('image')) {\n    msg.payload = msg.payload.toString('base64');\n} else {\n    msg.payload = msg.payload.toString();\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 240,
+        "y": 320,
+        "wires": [
+            [
+                "e22c4219.6e7be"
+            ]
+        ]
+    },
+    {
+        "id": "e22c4219.6e7be",
+        "type": "template",
+        "z": "b79b4208.d35c68",
+        "name": "HTML",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<html>\n<head><title>Display image</title></head>\n<body>\n<h1>Display image</h1>\n<img src=\"data:image/jpeg;base64,{{{payload}}}\"/>\n</body>\n</html>",
+        "output": "str",
+        "x": 410,
+        "y": 320,
+        "wires": [
+            [
+                "27ffcb7a.5bec14"
+            ]
+        ]
+    },
+    {
+        "id": "27ffcb7a.5bec14",
+        "type": "http response",
+        "z": "b79b4208.d35c68",
+        "name": "response",
+        "statusCode": "",
+        "headers": {},
+        "x": 580,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "7af33004.c9145",
+        "type": "change",
+        "z": "b79b4208.d35c68",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "req.files[0].buffer",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "b9a5597a.390cc8"
+            ]
+        ]
+    }
+]
