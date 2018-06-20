@@ -1,0 +1,96 @@
+[
+    {
+        "id": "a82289ce.aedfe8",
+        "type": "websocket out",
+        "z": "77550af3.f78534",
+        "name": "websocket",
+        "server": "bfc3ab78.1646d8",
+        "client": "",
+        "x": 370,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "23f43472.2b7bec",
+        "type": "http in",
+        "z": "77550af3.f78534",
+        "name": "[get] /imageurl",
+        "url": "/imageurl",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 100,
+        "wires": [
+            [
+                "a82289ce.aedfe8",
+                "cfc79f5c.285de"
+            ]
+        ]
+    },
+    {
+        "id": "94a3c9b1.05a7b8",
+        "type": "http in",
+        "z": "77550af3.f78534",
+        "name": "[get] /image",
+        "url": "/image",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 220,
+        "wires": [
+            [
+                "ff0506c7.a63708"
+            ]
+        ]
+    },
+    {
+        "id": "ff0506c7.a63708",
+        "type": "template",
+        "z": "77550af3.f78534",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<img id=\"img\" src=\"https://upload.wikimedia.org/wikipedia/commons/2/2b/Node-red-icon.png\"/>\n<script>\nvar wsUrl = 'wss://[hostname].mybluemix.net/ws/url';\nvar socket = new WebSocket(wsUrl);     \n\nsocket.onmessage = function(e) {\n    \n    var img = document.getElementById(\"img\");\n    var data = JSON.parse(e.data);\n    img.src = data.url;\n}\n</script>",
+        "output": "str",
+        "x": 360,
+        "y": 220,
+        "wires": [
+            [
+                "dbc84ba8.56b4c8"
+            ]
+        ]
+    },
+    {
+        "id": "dbc84ba8.56b4c8",
+        "type": "http response",
+        "z": "77550af3.f78534",
+        "name": "response",
+        "statusCode": "",
+        "headers": {},
+        "x": 540,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "cfc79f5c.285de",
+        "type": "http response",
+        "z": "77550af3.f78534",
+        "name": "response",
+        "statusCode": "",
+        "headers": {},
+        "x": 380,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "bfc3ab78.1646d8",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "/ws/url",
+        "wholemsg": "false"
+    }
+]
