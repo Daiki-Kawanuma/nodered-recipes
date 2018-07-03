@@ -4,7 +4,7 @@
         "type": "http in",
         "z": "36d10e5c.529692",
         "name": "request",
-        "url": "/person",
+        "url": "/insert",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
