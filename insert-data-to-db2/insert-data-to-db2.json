@@ -1,0 +1,68 @@
+[
+    {
+        "id": "7ec7032d.bd464c",
+        "type": "http in",
+        "z": "36d10e5c.529692",
+        "name": "request",
+        "url": "/person",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 70,
+        "y": 40,
+        "wires": [
+            [
+                "912aba5f.2a5728"
+            ]
+        ]
+    },
+    {
+        "id": "3fa48525.6c988a",
+        "type": "http response",
+        "z": "36d10e5c.529692",
+        "name": "response",
+        "statusCode": "",
+        "headers": {},
+        "x": 580,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "912aba5f.2a5728",
+        "type": "function",
+        "z": "36d10e5c.529692",
+        "name": "get query parameters",
+        "func": "msg.payload = {NAME: msg.req.query.name, AGE: msg.req.query.age};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 40,
+        "wires": [
+            [
+                "3fa48525.6c988a",
+                "300e899c.cb70f6"
+            ]
+        ]
+    },
+    {
+        "id": "300e899c.cb70f6",
+        "type": "dashDB out",
+        "z": "36d10e5c.529692",
+        "dashDB": "92138d8e.f09af",
+        "service": "_ext_",
+        "table": "PERSON",
+        "name": "insert data",
+        "x": 580,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "92138d8e.f09af",
+        "type": "dashDB",
+        "z": "",
+        "hostname": "dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net",
+        "db": "BLUDB",
+        "port": "50000",
+        "name": ""
+    }
+]
