@@ -46,7 +46,7 @@
         "type": "function",
         "z": "36d10e5c.529692",
         "name": "get query parameters",
-        "func": "msg.payload = {NAME: msg.req.query.name, AGE: msg.req.query.age};\nreturn msg;",
+        "func": "msg.payload = {name: msg.req.query.name, age: Number(msg.req.query.age)};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 300,
