@@ -9,3 +9,5 @@
 - [Web Socket の利用](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/use-websocket)
 - [Db2 にデータを挿入する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/insert-data-to-db2)
 - [Db2 のデータを検索する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/search-data-from-db2)
+- [Cloudant にデータを挿入する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/insert-data-to-cloudant)
+- [Cloudant のデータを検索する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/search-data-from-cloudant)
