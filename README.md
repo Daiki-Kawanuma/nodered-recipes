@@ -12,3 +12,4 @@
 - [Cloudant にデータを挿入する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/insert-data-to-cloudant)
 - [Cloudant のデータを検索する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/search-data-from-cloudant)
 - [配列の要素を取得する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/get-array-value)
+- [分岐処理を行う](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/switch-processing)
