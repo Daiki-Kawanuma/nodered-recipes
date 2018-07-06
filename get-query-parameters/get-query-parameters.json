@@ -11,7 +11,7 @@
         "type": "http in",
         "z": "b79b4208.d35c68",
         "name": "request",
-        "url": "/hoge",
+        "url": "/params",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
