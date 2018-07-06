@@ -1,27 +1,11 @@
-# Db2にデータを挿入
+# マップにピンを表示
 
-![flow](https://github.com/Daiki-Kawanuma/nodered-recipes/blob/master/insert-data-to-db2/image.png)
+![flow](https://github.com/Daiki-Kawanuma/nodered-recipes/blob/master/pin-to-map/image.png)
 
-Db2にデータを挿入するレシピ
+マップにピンを表示するレシピ
 
 ```
-[{"id":"a8567955.7b2218","type":"http in","z":"36d10e5c.529692","name":"request","url":"/insert","method":"get","upload":false,"swaggerDoc":"","x":90,"y":220,"wires":[["fe6cce29.3afb"]]},{"id":"ba7f2a4f.31a1c8","type":"http response","z":"36d10e5c.529692","name":"response","statusCode":"","headers":{},"x":600,"y":220,"wires":[]},{"id":"fe6cce29.3afb","type":"function","z":"36d10e5c.529692","name":"get query parameters","func":"msg.payload = {NAME: msg.req.query.name, AGE: Number(msg.req.query.age)};\nreturn msg;","outputs":1,"noerr":0,"x":340,"y":220,"wires":[["ba7f2a4f.31a1c8","c596daf8.0f9fb8"]]},{"id":"c596daf8.0f9fb8","type":"dashDB out","z":"36d10e5c.529692","dashDB":"92138d8e.f09af","service":"_ext_","table":"PERSON","name":"insert data","x":600,"y":280,"wires":[]},{"id":"92138d8e.f09af","type":"dashDB","z":"","hostname":"dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net","db":"BLUDB","port":"50000","name":""}]
+[{"id":"ecde9b2d.4245b8","type":"worldmap","z":"4faf54ca.3a4afc","name":"","lat":"35.7090","lon":"139.7320","zoom":"","cluster":"","maxage":"","x":670,"y":100,"wires":[]},{"id":"23c36.a44763ca6","type":"template","z":"4faf54ca.3a4afc","name":"ピンを配置","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"{\n    \"lat\": \"{{payload.lat}}\", \n    \"lon\": \"{{payload.lon}}\",\n    \"name\": \"{{payload.name}}\", \n    \"icon\": \"globe\",\n    \"iconColor\": \"orange\"\n}","output":"json","x":470,"y":60,"wires":[["ecde9b2d.4245b8"]]},{"id":"4378820c.5e58fc","type":"http in","z":"4faf54ca.3a4afc","name":"","url":"/map","method":"get","upload":false,"swaggerDoc":"","x":100,"y":140,"wires":[["5ce24aec.d27124"]]},{"id":"5ce24aec.d27124","type":"function","z":"4faf54ca.3a4afc","name":"パラメータ","func":"msg.payload.lat = msg.req.query.lat;\nmsg.payload.lon = msg.req.query.lon;\nmsg.payload.name = msg.req.query.name;\nreturn msg;","outputs":1,"noerr":0,"x":270,"y":140,"wires":[["23c36.a44763ca6","d9a7a1ec.250c8","8772fc81.9bacc"]]},{"id":"d9a7a1ec.250c8","type":"http response","z":"4faf54ca.3a4afc","name":"response","statusCode":"","headers":{},"x":460,"y":220,"wires":[]},{"id":"8772fc81.9bacc","type":"template","z":"4faf54ca.3a4afc","name":"移動とズーム","field":"payload","fieldType":"msg","format":"handlebars","syntax":"mustache","template":"{\n    \"command\": {\n        \"layer\": \"Esri Terrain\",\n        \"lat\": \"{{payload.lat}}\", \n        \"lon\": \"{{payload.lon}}\",\n        \"zoom\": \"10\"\n\n    }\n}","output":"json","x":480,"y":140,"wires":[["ecde9b2d.4245b8"]]}]
 ```
 
-Db2 資格情報（例）
-```
-{
-  "hostname": "dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net",
-  "password": "4cw0c22nq7r0j-76",
-  "https_url": "https://dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net",
-  "port": 50000,
-  "ssldsn": "DATABASE=BLUDB;HOSTNAME=dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net;PORT=50001;PROTOCOL=TCPIP;UID=pjk00128;PWD=4cw0c22nq7r0j-76;Security=SSL;",
-  "host": "dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net",
-  "jdbcurl": "jdbc:db2://dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB",
-  "uri": "db2://pjk00128:4cw0c22nq7r0j-76@dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50000/BLUDB",
-  "db": "BLUDB",
-  "dsn": "DATABASE=BLUDB;HOSTNAME=dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net;PORT=50000;PROTOCOL=TCPIP;UID=pjk00128;PWD=4cw0c22nq7r0j-76;",
-  "username": "pjk00128",
-  "ssljdbcurl": "jdbc:db2://dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50001/BLUDB:sslConnection=true;"
-}
-```
+
