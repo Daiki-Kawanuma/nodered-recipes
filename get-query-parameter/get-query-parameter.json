@@ -4,7 +4,7 @@
         "type": "http in",
         "z": "b79b4208.d35c68",
         "name": "request",
-        "url": "/hoge",
+        "url": "/param",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
@@ -37,7 +37,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "payload.name",
+                "to": "payload.value",
                 "tot": "msg"
             }
         ],
