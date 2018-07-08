@@ -1,10 +1,10 @@
 [
     {
-        "id": "532bb87.6014848",
+        "id": "76087eec.5388b",
         "type": "http in",
-        "z": "b79b4208.d35c68",
-        "name": "request",
-        "url": "/hoge",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "url": "/css",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
@@ -12,25 +12,25 @@
         "y": 60,
         "wires": [
             [
-                "511c15fc.432f7c"
+                "541e041d.c9ac2c"
             ]
         ]
     },
     {
-        "id": "4f30c2dd.5432ec",
+        "id": "a5ece4f7.299288",
         "type": "http response",
-        "z": "b79b4208.d35c68",
+        "z": "4faf54ca.3a4afc",
         "name": "response",
         "statusCode": "",
         "headers": {},
-        "x": 600,
+        "x": 540,
         "y": 60,
         "wires": []
     },
     {
-        "id": "c8243612.e7eff8",
+        "id": "a64130f9.8b0a4",
         "type": "template",
-        "z": "b79b4208.d35c68",
+        "z": "4faf54ca.3a4afc",
         "name": "HTML",
         "field": "payload",
         "fieldType": "msg",
@@ -38,18 +38,18 @@
         "syntax": "mustache",
         "template": "<style type=\"text/css\">{{{payload.css}}}</style>\n<h1>Hello, Node-RED</h1>\n<input class=\"raised\" type=\"button\" value=\"Click Me\">",
         "output": "str",
-        "x": 410,
+        "x": 390,
         "y": 60,
         "wires": [
             [
-                "4f30c2dd.5432ec"
+                "a5ece4f7.299288"
             ]
         ]
     },
     {
-        "id": "511c15fc.432f7c",
+        "id": "541e041d.c9ac2c",
         "type": "template",
-        "z": "b79b4208.d35c68",
+        "z": "4faf54ca.3a4afc",
         "name": "CSS",
         "field": "payload.css",
         "fieldType": "msg",
@@ -61,7 +61,7 @@
         "y": 60,
         "wires": [
             [
-                "c8243612.e7eff8"
+                "a64130f9.8b0a4"
             ]
         ]
     }
