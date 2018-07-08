@@ -8,7 +8,7 @@
         "fieldType": "msg",
         "format": "html",
         "syntax": "mustache",
-        "template": "<html>\n<head><title>Image upload</title></head>\n<body>\n<h1>Image upload</h1>\n<h2>Select an image file</h2>\n<form  action=\"/image\" method=\"post\" enctype=\"multipart/form-data\">\n    <input type=\"file\" name=\"imagedata\" accept=\"image/*\"  />\n    <input type=\"submit\" value=\"Upload\"/>\n</form>\n</body>\n</html>",
+        "template": "<html>\n<head><title>Image upload</title></head>\n<body>\n<h1>Image upload</h1>\n<h2>Select an image file</h2>\n<form  action=\"/upload_image\" method=\"post\" enctype=\"multipart/form-data\">\n    <input type=\"file\" name=\"imagedata\" accept=\"image/*\"  />\n    <input type=\"submit\" value=\"Upload\"/>\n</form>\n</body>\n</html>",
         "x": 350,
         "y": 140,
         "wires": [
@@ -21,7 +21,7 @@
         "id": "bf290e7c.8ee0c",
         "type": "http in",
         "z": "b79b4208.d35c68",
-        "name": "[GET] /image",
+        "name": "[get] /upload_image",
         "url": "/upload_image",
         "method": "get",
         "upload": false,
