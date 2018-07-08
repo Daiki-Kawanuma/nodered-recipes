@@ -15,3 +15,4 @@
 - [分岐処理を行う](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/switch-processing)
 - [地図を表示](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/show-html)
 - [地図にピンを表示](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/pin-to-map)
+- [顔認識を行う](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/detect-faces)
