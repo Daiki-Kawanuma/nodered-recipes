@@ -25,3 +25,5 @@ Db2 資格情報（例）
   "ssljdbcurl": "jdbc:db2://dashdb-txn-sbox-yp-dal09-03.services.dal.bluemix.net:50001/BLUDB:sslConnection=true;"
 }
 ```
+
+要求例: https://nodered-recipes-sample.mybluemix.net/insert?name=hoge&age=20
