@@ -1,52 +1,45 @@
 [
     {
-        "id": "b79b4208.d35c68",
-        "type": "tab",
-        "label": "フロー 1",
-        "disabled": false,
-        "info": ""
-    },
-    {
-        "id": "532bb87.6014848",
+        "id": "adc8ce45.ac005",
         "type": "http in",
-        "z": "b79b4208.d35c68",
+        "z": "4faf54ca.3a4afc",
         "name": "request",
         "url": "/params",
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 100,
-        "y": 60,
+        "x": 90,
+        "y": 220,
         "wires": [
             [
-                "5f8e0eb1.204fa"
+                "407c4dca.af8464"
             ]
         ]
     },
     {
-        "id": "4f30c2dd.5432ec",
+        "id": "1a7d8ba5.a91da4",
         "type": "http response",
-        "z": "b79b4208.d35c68",
+        "z": "4faf54ca.3a4afc",
         "name": "response",
         "statusCode": "",
         "headers": {},
-        "x": 570,
-        "y": 60,
+        "x": 560,
+        "y": 220,
         "wires": []
     },
     {
-        "id": "5f8e0eb1.204fa",
+        "id": "407c4dca.af8464",
         "type": "function",
-        "z": "b79b4208.d35c68",
+        "z": "4faf54ca.3a4afc",
         "name": "get query parameters",
         "func": "msg.payload.name = msg.req.query.name;\nmsg.payload.password = msg.req.query.password;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 340,
-        "y": 60,
+        "x": 330,
+        "y": 220,
         "wires": [
             [
-                "4f30c2dd.5432ec"
+                "1a7d8ba5.a91da4"
             ]
         ]
     }
