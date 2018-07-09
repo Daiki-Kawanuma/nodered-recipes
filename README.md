@@ -1,21 +1,32 @@
 # Node-RED レシピ集
 
+### HTTP/HTML
+
 - [クエリパラメータ取得（単一）](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/get-query-parameter)
 - [クエリパラメータ取得（複数）](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/get-query-parameters)
 - [HTML 表示](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/show-html)
 - [HTML に値をバインディング](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/binding-value)
 - [画像アップロード](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/upload-image)
 - [アップロードされた画像を表示](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/receive-posted-image)
+- [配列の要素を取得する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/get-array-value)
+- [分岐処理を行う](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/switch-processing)
 - [CSS適用](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/apply-css)
 - [Web Socket の利用](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/use-websocket)
+
+### DB
+
 - [Db2 にデータを挿入する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/insert-data-to-db2)
 - [Db2 のデータを検索する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/search-data-from-db2)
 - [Cloudant にデータを挿入する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/insert-data-to-cloudant)
 - [Cloudant のデータを検索する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/search-data-from-cloudant)
-- [配列の要素を取得する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/get-array-value)
-- [分岐処理を行う](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/switch-processing)
+
+### Map
+
 - [地図を表示](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/show-html)
 - [地図にピンを表示](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/pin-to-map)
+
+### Watson
+
 - [顔認識を行う](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/detect-faces)
 - [画像分類を行う](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/classtify-images)
 - [チャットボットを使う](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/use-chatbot)
