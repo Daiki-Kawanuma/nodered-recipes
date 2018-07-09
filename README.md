@@ -22,7 +22,7 @@
 
 ### Map
 
-- [地図を表示](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/show-html)
+- [地図を表示](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/show-map)
 - [地図にピンを表示](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/pin-to-map)
 
 ### Watson
