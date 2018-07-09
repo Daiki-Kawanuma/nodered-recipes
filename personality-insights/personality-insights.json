@@ -1,0 +1,103 @@
+[
+    {
+        "id": "b2668d43.d44fd",
+        "type": "change",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "e2d0afa.746855"
+            ]
+        ]
+    },
+    {
+        "id": "7f994e20.36e3b",
+        "type": "http in",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "url": "/insights",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 160,
+        "wires": [
+            [
+                "b2668d43.d44fd"
+            ]
+        ]
+    },
+    {
+        "id": "5fcce064.0d431",
+        "type": "http response",
+        "z": "4faf54ca.3a4afc",
+        "name": "response",
+        "statusCode": "",
+        "headers": {},
+        "x": 660,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "90a64eec.c0702",
+        "type": "change",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "insights",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 220,
+        "wires": [
+            [
+                "5fcce064.0d431"
+            ]
+        ]
+    },
+    {
+        "id": "e2d0afa.746855",
+        "type": "watson-personality-insights-v3",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "inputlang": "en",
+        "outputlang": "en",
+        "rawscores": false,
+        "consumption": false,
+        "default-endpoint": true,
+        "service-endpoint": "https://gateway.watsonplatform.net/personality-insights/api",
+        "x": 490,
+        "y": 160,
+        "wires": [
+            [
+                "90a64eec.c0702"
+            ]
+        ]
+    }
+]
