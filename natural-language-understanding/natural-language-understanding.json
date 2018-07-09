@@ -1,0 +1,120 @@
+[
+    {
+        "id": "b2668d43.d44fd",
+        "type": "change",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "9c726ebc.add89"
+            ]
+        ]
+    },
+    {
+        "id": "7f994e20.36e3b",
+        "type": "http in",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "url": "/nlu",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 160,
+        "wires": [
+            [
+                "b2668d43.d44fd"
+            ]
+        ]
+    },
+    {
+        "id": "5fcce064.0d431",
+        "type": "http response",
+        "z": "4faf54ca.3a4afc",
+        "name": "response",
+        "statusCode": "",
+        "headers": {},
+        "x": 660,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "90a64eec.c0702",
+        "type": "change",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "features",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 220,
+        "wires": [
+            [
+                "5fcce064.0d431"
+            ]
+        ]
+    },
+    {
+        "id": "9c726ebc.add89",
+        "type": "natural-language-understanding",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "categories": true,
+        "concepts": true,
+        "maxconcepts": "10",
+        "doc-emotion": false,
+        "doc-emotion-target": "",
+        "doc-sentiment": false,
+        "doc-sentiment-target": "",
+        "entity": false,
+        "entity-emotion": false,
+        "entity-sentiment": false,
+        "maxentities": "50",
+        "keyword": false,
+        "keyword-emotion": false,
+        "keyword-sentiment": false,
+        "maxkeywords": "50",
+        "metadata": false,
+        "relation": false,
+        "semantic": false,
+        "semantic-entities": false,
+        "semantic-keywords": false,
+        "maxsemantics": "50",
+        "default-endpoint": true,
+        "service-endpoint": "https://gateway.watsonplatform.net/natural-language-understanding/api",
+        "x": 540,
+        "y": 160,
+        "wires": [
+            [
+                "90a64eec.c0702"
+            ]
+        ]
+    }
+]
