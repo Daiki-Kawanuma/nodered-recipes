@@ -30,3 +30,5 @@
 - [顔認識を行う](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/detect-faces)
 - [画像分類を行う](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/classtify-images)
 - [チャットボットを使う](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/use-chatbot)
+- [言語を翻訳する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/translate-language)
+- [言語を特定する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/identify-language)
