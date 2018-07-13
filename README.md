@@ -35,3 +35,6 @@
 - [テキストを分析する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/natural-language-understanding)
 - [性格分析する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/personality-insights)
 - [テキストを音声に変換する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/text-to-speech)
+
+### ソーシャル
+- [メールを送信する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/send-email)
