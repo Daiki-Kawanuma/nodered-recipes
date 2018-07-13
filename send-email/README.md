@@ -10,6 +10,5 @@
 
 要求例: https://nodered-recipes-sample.mybluemix.net/mail?to=test@example.com&&topic=hello&content=world
 
-*Gmail を SMTP に使う準備*
-https://myaccount.google.com/lesssecureapps
+**Gmail を SMTP に使う準備**　https://myaccount.google.com/lesssecureapps
 ![flow](https://github.com/Daiki-Kawanuma/nodered-recipes/blob/master/send-email/image2.png)
