@@ -1,0 +1,100 @@
+[
+    {
+        "id": "4b3f1e4d.4448d",
+        "type": "twitter in",
+        "z": "4faf54ca.3a4afc",
+        "twitter": "",
+        "tags": "#railsdm",
+        "user": "false",
+        "name": "",
+        "topic": "tweets",
+        "inputs": 0,
+        "x": 90,
+        "y": 160,
+        "wires": [
+            [
+                "7b45ae9.bdae55",
+                "f6c76.b846b38a8"
+            ]
+        ]
+    },
+    {
+        "id": "7b45ae9.bdae55",
+        "type": "websocket out",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "server": "7d22fbc6.e26d44",
+        "client": "",
+        "x": 260,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6ec76833.b80448",
+        "type": "http in",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "url": "/tweets",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "94b7206b.1dcdd"
+            ]
+        ]
+    },
+    {
+        "id": "94b7206b.1dcdd",
+        "type": "template",
+        "z": "4faf54ca.3a4afc",
+        "name": "HTML",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html>\n<html>\n<head>\n<title>Tweets</title>\n<script type=\"text/javascript\" src=\"//code.jquery.com/jquery-2.0.3.min.js\"></script>\n<script type=\"text/javascript\">\nvar socket;\nvar zIndex = 0;\nvar wsUrl = 'wss://' + location.hostname + '/ws/tweets';\nfunction connect(){\n    socket = new WebSocket(wsUrl);\n    socket.onmessage = function(e) {\n        console.log(e);\n        var tweet = e.data;\n        var ts = e.timeStamp;\n        \n        var left = Math.floor( Math.random() * window.innerWidth );\n        var top = Math.floor( Math.random() * window.innerHeight );\n        var color = \"rgb(\" + (~~(256 * Math.random())) + \", \" + (~~(256 * Math.random())) + \", \" + (~~(256 * Math.random())) + \")\" ;\n        var div = \"<div class=\\\"tweet\\\" style=\\\"z-index: \" + zIndex + \"; position:absolute; top:\" + top + \"px; left:\" + left + \"px; border: 2px solid \" + color + \";\\\">\" + tweet + \"</div>\";\n        $('body').append( div );\n        zIndex++;\n    }\n}\n</script>\n<style>\ndiv.tweet {\n  position: relative;\n  width: auto;\n  max-width: 500px;\n  height: auto;\n  padding: 2px 4px 2px 4px; \n  font-size: small;\n  text-align: center;\n  line-height:normal;\n  background-color: #fff;\n  -webkit-border-radius: 30px;\n  -moz-border-radius: 30px;\n  border-radius: 30px;\n  -webkit-box-shadow: 2px 2px 4px #888;\n  -moz-box-shadow: 2px 2px 4px #888;\n  box-shadow: 2px 2px 4px #888;\n  overflow: hidden;\n}\n</style>\n</head>\n<body onload=\"connect()\">\n</body>\n</html>",
+        "output": "str",
+        "x": 270,
+        "y": 220,
+        "wires": [
+            [
+                "56c74174.cd5d2"
+            ]
+        ]
+    },
+    {
+        "id": "56c74174.cd5d2",
+        "type": "http response",
+        "z": "4faf54ca.3a4afc",
+        "name": "response",
+        "statusCode": "",
+        "headers": {},
+        "x": 420,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f6c76.b846b38a8",
+        "type": "debug",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 250,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7d22fbc6.e26d44",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "/ws/tweets",
+        "wholemsg": "false"
+    }
+]
