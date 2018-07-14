@@ -39,3 +39,5 @@
 ### ソーシャル
 - [メールを送信する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/send-email)
 - [ツイートを送信する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/send-tweet)
+- [ツイートを表示する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/show-tweets)
+
