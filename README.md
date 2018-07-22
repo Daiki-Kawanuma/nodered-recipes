@@ -34,6 +34,7 @@
 - [言語を特定する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/identify-language)
 - [テキストを分析する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/natural-language-understanding)
 - [性格分析する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/personality-insights)
+- [感情分析する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/tone-analyzer)
 - [テキストを音声に変換する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/text-to-speech)
 
 ### ソーシャル
