@@ -1,0 +1,105 @@
+[
+    {
+        "id": "15f5d896.1ab247",
+        "type": "http in",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "url": "/tone-analyzer",
+        "method": "get",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 100,
+        "wires": [
+            [
+                "5c65968c.3c1608"
+            ]
+        ]
+    },
+    {
+        "id": "5c65968c.3c1608",
+        "type": "change",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.text",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 100,
+        "wires": [
+            [
+                "97638f1b.8dab4"
+            ]
+        ]
+    },
+    {
+        "id": "97638f1b.8dab4",
+        "type": "watson-tone-analyzer-v3",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "tones": "emotion",
+        "sentences": "true",
+        "contentType": "false",
+        "tone-method": "generalTone",
+        "interface-version": "2016-05-19",
+        "inputlang": "en",
+        "default-endpoint": true,
+        "service-endpoint": "https://gateway.watsonplatform.net/tone-analyzer/api",
+        "x": 220,
+        "y": 160,
+        "wires": [
+            [
+                "5297727a.61936c"
+            ]
+        ]
+    },
+    {
+        "id": "d35fc97.1dade38",
+        "type": "http response",
+        "z": "4faf54ca.3a4afc",
+        "name": "response",
+        "statusCode": "",
+        "headers": {},
+        "x": 600,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "5297727a.61936c",
+        "type": "change",
+        "z": "4faf54ca.3a4afc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "response",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 160,
+        "wires": [
+            [
+                "d35fc97.1dade38"
+            ]
+        ]
+    }
+]
