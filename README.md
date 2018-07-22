@@ -8,7 +8,7 @@
 - [HTML に値をバインディング](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/binding-value)
 - [画像アップロード](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/upload-image)
 - [アップロードされた画像を表示](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/receive-posted-image)
-- [配列の要素を取得する](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/get-array-value)
+- [配列の要素を取得する（function編）](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/get-array-value-function)
 - [分岐処理を行う](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/switch-processing)
 - [CSS適用](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/apply-css)
 - [Web Socket の利用](https://github.com/Daiki-Kawanuma/nodered-recipes/tree/master/use-websocket)

@@ -1,6 +1,6 @@
-# 配列の要素を取得
+# 配列の要素を取得（function編）
 
-![flow](https://github.com/Daiki-Kawanuma/nodered-recipes/blob/master/get-array-value/image.png)
+![flow](https://github.com/Daiki-Kawanuma/nodered-recipes/blob/master/get-array-value-function/image.png)
 
 配列の要素を取得するレシピ
 
